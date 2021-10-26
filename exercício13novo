@@ -1,0 +1,56 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercício 13</title>
+    <script language="javascript">
+
+      function verificaTriângulo()
+      {
+        var primeiroL, segundoL, terceiroL;
+
+        primeiroL = document.frmDados.primeiroL.value;
+        segundoL = document.frmDados.segundoL.value;
+        terceiroL = document.frmDados.terceiroL.value;
+
+        if (primeiroL == segundoL && segundoL != terceiroL ||
+            primeiroL == terceiroL && terceiroL != segundoL ||
+            segundoL == terceiroL && terceiroL !=primeiroL)
+        {
+          document.getElementById("saídaTriângulo").innerHTML = "Essas medidas formam um <b>triângulo isósceles</b>.<br>" + 
+          "<img src='https://escolaeducacao.com.br/wp-content/uploads/2020/06/triangulo-isosceles.png' width = '250' height = '380'></h1>";
+          document.getElementById("imgTriângulo").innerHTML = triânguloIsósceles();
+        }
+        else if (primeiroL == segundoL && segundoL == terceiroL)
+        {
+          document.getElementById("saídaTriângulo").innerHTML = "Essas medidas formam um <b>triângulo equilátero</b><br>." + 
+          "<img src='https://escolaeducacao.com.br/wp-content/uploads/2020/06/triangulo-equilatero.png' width = '220px' height = '190px'></h1>";
+          document.getElementById("imgTriângulo").innerHTML = triânguloEquilátero();
+        }
+        else if (primeiroL != segundoL != terceiroL)
+        {
+          document.getElementById("saídaTriângulo").innerHTML = "Essas medidas formam um <b>triângulo escaleno</b>.<br>" + 
+          "<img src='https://escolaeducacao.com.br/wp-content/uploads/2020/06/triangulo-escaleno.png' width = '320px' height = '150px'></h1>";
+          document.getElementById("imgTriângulo").innerHTML = triânguloEscaleno();
+        }
+        else
+        {
+          document.getElementById("saídaTriângulo").innerHTML = "Essas medidas <b>não</b> formam um triângulo.";
+        }
+      } 
+  </script>
+  </head>
+<body>
+
+  <form name="frmDados">
+    Insira o primeiro valor: <input type="number" id="primeiroL"><br>
+    Insira o segundo valor: <input type="number" id="segundoL"><br>
+    Insira o terceiro valor: <input type="number" id="terceiroL"><br><br>
+    <input type="button" value="Enviar" onclick="verificaTriângulo();">
+    <br><br>
+
+  <p id="saídaTriângulo"></p>
+  <p id="imgTriângulo"></p>
+
+  </form>
+</body>
+</html>
