@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercício 5</title>
+    
+    <script language="javascript">
+
+      function calcularMédia()
+      {
+        var primeiro, segundo, terceiro, quarto, soma, média;
+
+        primeiro = document.frmDados.nmbrPrim.value;
+        segundo = document.frmDados.nmbrSeg.value;
+        terceiro = document.frmDados.nmbrTerc.value;
+        quarto = document.frmDados.nmbrQua.value;
+
+        soma = Number(primeiro) + Number(segundo) + Number(terceiro) + Number(quarto);
+        média = soma / 4;
+
+        document.getElementById("numberSaidaMed").innerHTML = "A média aritmética entre os quatro valores digitados é igual a "+ média +".";
+      }
+  </script>
+  </head>
+<body>
+  <form name="frmDados">
+    Insira o primeiro valor: <input type="number" id="nmbrPrim"><br>
+    Insira o segundo valor: <input type="number" id="nmbrSeg"><br>
+    Insira o terceiro valor: <input type="number" id="nmbrTerc"><br>
+    Insira o quarto valor: <input type="number" id="nmbrQua"><br><br>
+    <input type="button" value="Enviar" onclick="calcularMédia();">
+    <br><br>
+  </form>
+  
+  <p id="numberSaidaMed"></p>
+</body>
+</html>
