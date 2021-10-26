@@ -1,0 +1,36 @@
+<html>
+  <head>
+    <meta charset="utf-8">
+    <title>Exercício 17</title>
+    <script language="javascript">
+
+      function calcularTabuada()
+      {
+        var númeroMultiplicado, tabuada;
+
+        númeroMultiplicado = document.frmDados.nmbrMultiplicado.value;
+        document.getElementById("numberSaidaTitle").innerHTML = "<h3><b>Tabuada do número ", númeroMultiplicado, "</b></h3>";
+            
+          for (contador = 0; contador <= 10; ++contador)
+          {
+            tabuada += númeroMultiplicado + " X "+ contador +" = <b>" +  númeroMultiplicado * contador + "</b><br>";
+            document.getElementById("numberSaidaMult").innerHTML = tabuada;
+          }
+      }
+  </script>
+  </head>
+  <body>   
+
+    <form name="frmDados">
+        Digite um valor positivo: <input type="number" id="nmbrMultiplicado"><br><br>
+        <input type="button" value="Enviar" onclick="calcularTabuada();">
+
+        <p id="numberSaidaTitle"></p>
+        <p id="numberSaidaMult"></p>
+
+    </form>
+    </body>
+    </html>
+      </head>
+</body>
+</html>
